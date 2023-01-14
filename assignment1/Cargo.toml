@@ -1,0 +1,21 @@
+[package]
+name = "assignment1"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name="fibonacci"
+path="src/bin/fibonacci.rs"
+
+[[bin]]
+name="temp_converter"
+path="src/bin/temp_converter.rs"
+
+[[bin]]
+name="lyrics"
+path="src/bin/lyrics.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+colored="2.0.0"
