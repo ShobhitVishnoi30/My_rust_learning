@@ -1,5 +1,6 @@
 mod buy_sell_stock;
 mod contains_duplicate;
+mod product_of_array;
 mod two_sum;
 
 fn main() {
@@ -19,4 +20,9 @@ fn main() {
     let profit = buy_sell_stock::max_profit(nums);
 
     print!("Max profit is {:?}\n", profit);
+
+    let nums = vec![-1, 1, 0, -3, 3];
+
+    let result_array = product_of_array::product_except_self(nums);
+    print!("Product array is {:?}", result_array);
 }
