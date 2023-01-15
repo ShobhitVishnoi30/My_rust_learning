@@ -1,5 +1,8 @@
+use core::num;
+
 mod buy_sell_stock;
 mod contains_duplicate;
+mod max_sum_array;
 mod product_of_array;
 mod two_sum;
 
@@ -24,5 +27,10 @@ fn main() {
     let nums = vec![-1, 1, 0, -3, 3];
 
     let result_array = product_of_array::product_except_self(nums);
-    print!("Product array is {:?}", result_array);
+    print!("Product array is {:?}\n", result_array);
+
+    let nums = vec![5, 4, -1, 7, 8];
+    let result = max_sum_array::max_sub_array(nums);
+
+    println!("Maximum subarray sum is {result}\n")
 }
