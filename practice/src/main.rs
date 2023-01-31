@@ -4,6 +4,7 @@ mod buy_sell_stock;
 mod contains_duplicate;
 mod max_sum_array;
 mod product_of_array;
+mod minimum_sorted_rotated;
 mod two_sum;
 mod max_product;
 
@@ -35,7 +36,11 @@ fn main() {
 
     println!("Maximum subarray sum is {result}\n")
     
-    let nums = vec![-1, -1, -2, -2];
+       let nums = vec![-1, -1, -2, -2];
     let result = max_product::max_product(nums);
-    println!("Maximum subarray sum is {result}\n");
+    println!("Maximum product is {result}\n");
+
+    let nums = vec![4, 5, 6, 7, 0, 1, 2];
+    let result = minimum_sorted_rotated::find_min(nums);
+    println!("Minimum in Rotated Sorted Array is {result}\n");
 }
