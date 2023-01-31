@@ -5,6 +5,7 @@ mod contains_duplicate;
 mod max_sum_array;
 mod product_of_array;
 mod two_sum;
+mod max_product;
 
 fn main() {
     let nums: Vec<i32> = vec![1, 2, 3, 1];
@@ -33,4 +34,8 @@ fn main() {
     let result = max_sum_array::max_sub_array(nums);
 
     println!("Maximum subarray sum is {result}\n")
+    
+    let nums = vec![-1, -1, -2, -2];
+    let result = max_product::max_product(nums);
+    println!("Maximum subarray sum is {result}\n");
 }
