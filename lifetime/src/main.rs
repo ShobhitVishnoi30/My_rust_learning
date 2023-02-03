@@ -1,4 +1,20 @@
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
+impl<'a> ImportantExcerpt<'a> {
+    fn getString(&self, s: &'a str) -> &'a str {
+        self.part
+    }
+}
+
 fn main() {
+    let string1 = String::from("abcd");
+    let a = ImportantExcerpt { part: &string1 };
+
+    let string2 = String::from("xyz");
+    println!("The longest string is {}", a.getString(&string2));
+
     let string1 = String::from("abcd");
     let string2 = String::from("xyz");
 
