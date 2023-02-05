@@ -5,6 +5,7 @@ mod max_sum_array;
 mod minimum_sorted_rotated;
 mod product_of_array;
 mod two_sum;
+mod reverse_integer;
 
 fn main() {
     let nums: Vec<i32> = vec![1, 2, 3, 1];
@@ -41,4 +42,8 @@ fn main() {
     let nums = vec![4, 5, 6, 7, 0, 1, 2];
     let result = minimum_sorted_rotated::find_min(nums);
     println!("Minimum in Rotated Sorted Array is {result}\n");
+    
+    let num:i32=123;
+    let result:i32=reverse_integer.reverse(num);
+    println!("Reverse number is {:?}",result);
 }
