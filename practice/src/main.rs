@@ -44,6 +44,6 @@ fn main() {
     println!("Minimum in Rotated Sorted Array is {result}\n");
     
     let num:i32=123;
-    let result:i32=reverse_integer.reverse(num);
+    let result:i32=reverse_integer::reverse(num);
     println!("Reverse number is {:?}",result);
 }
