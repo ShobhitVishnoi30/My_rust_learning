@@ -1,2 +1,2 @@
-# My_rust_learning
+# my-rust-learning
 Rust Learning
