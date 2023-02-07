@@ -4,6 +4,28 @@ struct Rectangle {
     height: u32,
 }
 
+pub struct Guess {
+    a: u32,
+}
+
+impl Guess {
+    fn new(value: i32) -> Guess {
+        if value < 1 {
+            panic!(
+                "Guess value must be greater than or equal to 1, got {}.",
+                value
+            );
+        } else if value > 100 {
+            panic!(
+                "Guess value must be less than or equal to 100, got {}.",
+                value
+            );
+        }
+
+        Guess { a: value as u32 }
+    }
+}
+
 impl Rectangle {
     fn can_hold(&self, other: Rectangle) -> bool {
         self.width > other.width && self.height > other.height
@@ -12,6 +34,10 @@ impl Rectangle {
 
 pub fn add_two(a: u32, b: u32) -> u32 {
     return a + b;
+}
+
+pub fn greeting(name: &str) -> String {
+    format!("Hello {}!", name)
 }
 
 #[cfg(test)]
@@ -56,5 +82,32 @@ mod tests {
     #[test]
     fn it_adds_two_failed() {
         assert_ne!(5, add_two(2, 2));
+    }
+
+    #[test]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was `{}`", //Custom error message
+            result
+        );
+    }
+
+    #[test]
+    #[should_panic(expected = "Guess value must be greater than or equal to 1")]
+    fn test_guess() {
+        Guess::new(0);
+    }
+
+    #[test]
+    #[should_panic(expected = "Guess value must be less than or equal to 100")]
+    fn test_guess_100() {
+        Guess::new(101);
+    }
+
+    #[test]
+    fn test_guess_50() {
+        Guess::new(50);
     }
 }
