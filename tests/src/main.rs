@@ -110,4 +110,13 @@ mod tests {
     fn test_guess_50() {
         Guess::new(50);
     }
+
+    #[test]
+    fn test_result_type() -> Result<(), String> {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus two does not equal four"))
+        }
+    }
 }
