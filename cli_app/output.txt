@@ -1,0 +1,3 @@
+Searching for "to"
+Searching in "poem.txt"
+Result ["I want to die as the day declines, ", "to be like the sun that slowly expires; "]
