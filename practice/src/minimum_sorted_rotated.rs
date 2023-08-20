@@ -1,22 +1,17 @@
 pub fn find_min(nums: Vec<i32>) -> i32 {
-    let mut min: i32 = nums[0];
-    let mut right: usize = nums.len() - 1;
+    let mut min = nums[0];
     let mut left = 0;
-
-    if (right == 0) {
-        return nums[0];
-    }
+    let mut right = nums.len() - 1;
 
     while left <= right {
         if (nums[left] < nums[right]) {
             if (min > nums[left]) {
-                min = nums[left];
+                min = nums[left]
             }
-
             break;
         }
         let mid = (left + right) / 2;
-        if (min > nums[mid]) {
+        if (nums[mid] < min) {
             min = nums[mid];
         }
 
@@ -26,5 +21,6 @@ pub fn find_min(nums: Vec<i32>) -> i32 {
             right = mid - 1;
         }
     }
+
     return min;
 }
